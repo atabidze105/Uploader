@@ -1,0 +1,184 @@
+<Window 
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="870" d:DesignHeight="900"
+	Height="900" Width="870"
+	CanResize="False"
+	WindowStartupLocation="CenterOwner"
+	x:Class="DataUploaderApp.AddWindow"
+	Title="AddWindow">
+	<Grid
+		ShowGridLines="False"
+		ColumnDefinitions="*,*,*"
+		RowDefinitions="auto,*,auto">
+		<TextBlock
+			Name="tblock_header"
+			Grid.Column="1" HorizontalAlignment="Center"
+			Margin="10" FontSize="25"/>
+		<StackPanel
+			Grid.Row="1" Grid.ColumnSpan="2"
+			Orientation="Vertical" HorizontalAlignment="Center">
+			<!--ID-->
+			<TextBlock
+				Name="tblok_id"
+				Text="ID:"
+				FontSize="16"
+				VerticalAlignment="Center"/>
+			<!--Название-->
+			<StackPanel
+				Orientation="Horizontal"
+				Margin="0 0 0 10">
+				<TextBlock
+					Text="Название:"
+					FontSize="16"
+					VerticalAlignment="Center"/>
+				<TextBox
+					Name="tbox_name"
+					Width="300"
+					VerticalAlignment="Center"/>
+			</StackPanel>
+			<!--Описание-->
+			<StackPanel
+				Orientation="Horizontal"
+				Margin="0 0 0 10">
+				<TextBlock
+					Text="Описание:"
+					FontSize="16"
+					VerticalAlignment="Top"/>
+				<TextBox
+					Name="tbox_description"
+					Width="300" Height="250"
+					VerticalAlignment="Center"
+					TextWrapping="Wrap"/>
+			</StackPanel>
+			<!--Аудио-->
+			<StackPanel
+				Orientation="Horizontal"
+				Margin="0 0 0 10">
+				<TextBlock
+					Text="Аудио:"
+					FontSize="16"
+					VerticalAlignment="Top"/>
+				<StackPanel
+					Margin="10 0"
+					Orientation="Vertical"
+					HorizontalAlignment="Center">
+					<TextBlock
+						Name="tblock_previewAudio"
+						Text="test.mp3"/>
+					<StackPanel
+						Orientation="Horizontal"
+						Margin="0 10">
+						<Button 
+							Name="btn_deleteAudio"
+							Content="Удалить"/>
+						<Button 
+							Name="btn_playAudio"
+							Content="Прослушать"/>
+						<Button 
+							Name="btn_addAudio"
+							Content="Добавить"/>
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+			<!--Видео-->
+			<StackPanel
+				Orientation="Horizontal"
+				Margin="0 0 0 10">
+				<TextBlock
+					Text="Видео:"
+					FontSize="16"
+					VerticalAlignment="Top"/>
+				<StackPanel
+					Margin="10 0"
+					Orientation="Vertical"
+					HorizontalAlignment="Center">
+					<TextBlock
+						Name="tblock_previewVideo"
+						Text="test.mp4"/>
+					<StackPanel
+						Orientation="Horizontal"
+						Margin="0 10">
+						<Button
+							Name="btn_deleteVideo"
+							Content="Удалить"/>
+						<Button
+							Name="btn_playVideo"
+							Content="Просмотреть"/>
+						<Button
+							Name="btn_addVideo"
+							Content="Добавить"/>
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+			<!--Модель-->
+			<StackPanel
+				Orientation="Horizontal"
+				Margin="0 0 0 10">
+				<TextBlock
+					Text="Модель:"
+					FontSize="16"
+					VerticalAlignment="Top"/>
+				<StackPanel
+					Margin="10 0"
+					Orientation="Vertical"
+					HorizontalAlignment="Center">
+					<TextBlock
+						Name="tblock_previewModel"
+						Text="файл_модели"/>
+					<StackPanel
+						Orientation="Horizontal"
+						Margin="0 10">
+						<Button
+							Name="btn_deleteModel"
+							Content="Удалить"/>
+						<Button
+							Name="btn_addModel"
+							Content="Добавить"/>
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+		<!--Изображения-->
+		<StackPanel
+				Orientation="Vertical"
+				Margin="0 0 0 10"
+				Grid.Column="2"
+				Grid.Row="1">
+			<TextBlock
+				Text="Изображения:"
+				FontSize="16"
+				VerticalAlignment="Top"/>
+			<ListBox
+				Name="lbox_images"
+				Height="400"
+				Margin="0 0 20 0">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+			<Button
+				Name="btn_addImage"
+				Content="Добавить изображение"
+				Margin="10"/>
+		</StackPanel>
+		<StackPanel
+			Grid.Row="2" Grid.ColumnSpan="3"
+			Orientation="Horizontal"
+			HorizontalAlignment="Center"
+			Margin="15">
+			<Button
+				Name="btn_return"
+				Click="ReturnToMain"
+				Content="Отмена"
+				Margin="150 0"/>
+			<Button
+				Name="btn_confirm"
+				Margin="150 0"/>
+		</StackPanel>
+	</Grid>
+</Window>

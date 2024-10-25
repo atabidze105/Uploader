@@ -1,0 +1,64 @@
+<Window 
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="870" d:DesignHeight="900"
+	Height="900" Width="870"
+	CanResize="False"
+	WindowStartupLocation="CenterOwner"
+	x:Class="DataUploaderApp.MainWindow"
+	Title="DataUploaderApp">
+	<Grid
+		ShowGridLines="false"
+		ColumnDefinitions="*,*,*"
+		RowDefinitions="auto,auto,*">
+		<!--Строка поиска-->
+		<TextBox
+			Name="tbox_searchbar"
+			Height="40" Margin="10 10 10 60"
+			Grid.ColumnSpan="2" FontSize="16"
+			VerticalContentAlignment="Center"/>
+		<StackPanel
+			Orientation="Vertical"
+			Grid.Column="2"
+			HorizontalAlignment="Center"
+			Margin="10">
+			<!--Фильтрация-->
+			<ComboBox
+				Name="cbox_filtration"
+				SelectedIndex="0"
+				HorizontalAlignment="Center">
+				<ComboBoxItem
+					Content="По умолчанию"/>
+			</ComboBox>
+			<!--Добавить объект-->
+			<Button
+				Name="btn_addItem"
+				Content="Добавить"
+				VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				HorizontalAlignment="Center"
+				Margin="10 20 10 0"
+				Click="OpenAddWindow"/>
+		</StackPanel>
+		<!--Все объекты-->
+		<ListBox
+			Name="lbox_items"
+			Grid.Row="1" Height="720"
+			Grid.ColumnSpan="3">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<!--вывод общего и выведенного количеств объектов-->
+		<TextBlock
+			Name="tblock_itemsCount"
+			Grid.Column="1" Grid.Row="2"
+			HorizontalAlignment="Center"
+			Margin="20" FontSize="20"
+			Text="0/0"/>
+	</Grid>
+</Window>
